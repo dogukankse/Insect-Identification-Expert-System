@@ -26,11 +26,42 @@ Orijinal çalışmayı hazırlayan kişiler:
 
 :- dynamic yes/1, no/1.
 
+% kuralların ayrı bulunabilmesi için
+:- discontiguous sternorrhynca/0 .
+:- discontiguous diptera/0.
+:- discontiguous psocoptera/0.
+:- discontiguous lepidoptera/0.
+:- discontiguous hemiptera/0.
+:- discontiguous embioptera/0.
+:- discontiguous mecoptera/0.
+:- discontiguous dermaptera/0.
+:- discontiguous orthoptera/0.
+:- discontiguous zoraptera/0.
+:- discontiguous isoptera/0.
+:- discontiguous hymenoptera/0.
+:- discontiguous phasmida/0.
+:- discontiguous mantodea/0.
+:- discontiguous blattaria/0.
+:- discontiguous neuroptera/0.
+:- discontiguous megaloptera/0.
+:- discontiguous raphidioptera/0.
+:- discontiguous trichoptera/0.
+:- discontiguous ephemeroptera/0.
+
+
+
+
+
+
+
+
+%başlangıç komutu
 start:- insect(X), 
     write('Gordugunuz bocek:'), 
     write(X),
     nl,undo.
 
+%tanımlanabilecek böcek türleri
 insect(tetrigidae):-tetrigidae,!.
 insect(ephemeroptera):-ephemeroptera,!.
 insect(sternorrhyncha):-sternorrhyncha,!.
@@ -74,7 +105,7 @@ insect(hemiptera):-hemiptera,!.
 insect(bedbug):-bedbug,!.
 insect(thysanoptera):-thysanoptera,!.
 
-%düzgün
+%tanımlama soruları başlangıç
 tetrigidae:-question_1,question_2,question_3_.
 ephemeroptera:-question_1,question_2,question_26,question_27.
 sternorrhyncha:-question_1,question_2,question_26.
@@ -113,50 +144,41 @@ megaloptera:-question_1,question_19.
 isoptera:-question_1,question_20.
 neuroptera:-question_1.
 
-
-%%karışık
-
-
-
-
-
-
-diptera:-question_wl1,question_wl5,question_wl13.
-diptera:-question_wl30.
-dermaptera:-question_wl1,question_wl3.
-dermaptera:-question_wl1,question_wl18,question_wl19.
-orthoptera:-question_wl1,question_wl16.
-blattaria:-question_wl1,question_wl5,question_wl7,question_wl11.
-mantodea:-question_wl1,question_wl5,question_wl7,question_wl12.
-phasmida:-question_wl1,question_wl5,question_wl7.
-lepidoptera:-question_wl1,question_wl22.
-psocoptera:-question_wl1,question_wl5,question_wl7,question_wl10.
-psocoptera:-question_wl1.
-hymenoptera:-question_wl1,question_wl14,question_wl15.
-zoraptera:-question_wl1,question_wl14.
-mecoptera:-question_wl1,question_wl18,question_wl20.
-embioptera:-question_wl1,question_wl18,question_wl21.
-isoptera:-question_wl1,question_wl14,question_wl25.
 collembola:-question_wl1,question_wl2.
 microcoryphia:-question_wl1,question_wl3,question_wl4,question_wl40.
 thysaneura:-question_wl1,question_wl3,question_wl4,question_wl41.
 diplura:-question_wl1,question_wl3,question_wl4.
 notoptera:-question_wl1,question_wl3,question_wl45.
-protura:-question_wl30,question_wl31.
-sternorrhynca:-question_wl30,question_wl32.
-sternorrhynca:-question_wl1,question_wl17.
-bagworm.
+dermaptera:-question_wl1,question_wl3.
 siphonoptera:-question_wl1,question_wl5,question_wl6.
 anoplura:-question_wl1,question_wl5,question_wl7,question_wl8,question_wl9.
 mallophaga:-question_wl1,question_wl5,question_wl7,question_wl8.
+psocoptera:-question_wl1,question_wl5,question_wl7,question_wl10.
+blattaria:-question_wl1,question_wl5,question_wl7,question_wl11.
+mantodea:-question_wl1,question_wl5,question_wl7,question_wl12.
+phasmida:-question_wl1,question_wl5,question_wl7.
+diptera:-question_wl1,question_wl5,question_wl13.
 hemiptera:-question_wl1,question_wl5.
+hymenoptera:-question_wl1,question_wl14,question_wl15.
+isoptera:-question_wl1,question_wl14,question_wl25.
+zoraptera:-question_wl1,question_wl14.
+orthoptera:-question_wl1,question_wl16.
+sternorrhynca:-question_wl1,question_wl17.
+dermaptera:-question_wl1,question_wl18,question_wl19.
+mecoptera:-question_wl1,question_wl18,question_wl20.
+embioptera:-question_wl1,question_wl18,question_wl21.
 hemiptera:-question_wl1,question_wl18.
+lepidoptera:-question_wl1,question_wl22.
 bedbug:-question_wl1,question_wl23.
 thysanoptera:-question_wl1,question_wl24.
+psocoptera:-question_wl1.
+protura:-question_wl30,question_wl31.
+diptera:-question_wl30.
+sternorrhynca:-question_wl32.
+bagworm.
+%tanımlama soruları bitiş
 
-
-
-%% questions for insect defination
+% kullanıcıya sorulacak soru tanımları
 question_1:-verify('1. Does your insect have wings?').
 question_2:-verify('2. Does your insect have only one pair of wings?').
 question_4_:-verify('3. Do the two pairs of wings differ greatly in structure, with the first being thick and hard or fibrous?').
@@ -228,7 +250,7 @@ question_wl41:-verify(does_your_insect_have_three_caudal_filaments).
 question_wl45:-verify(does_your_insect_have_long_thin_antennae_that_are_each_comprised_of_28_50_segments_and_does_your_insect_have_five_segmented_tarsi).
 
 
-
+% soru sorma logic kısmı
 ask(Question):-
     write(Question),nl,
     read(Response), nl,
@@ -237,9 +259,10 @@ ask(Question):-
 
 ask(Question):-assert(no(Question)),fail.
 
+% doğrulama
 verify(S):- yes(S),!.
 verify(S):- not(no(S)),ask(S).
-
+% tüm cevapları geri al
 undo :- retract(yes(_)),fail.
 undo :- retract(no(_)),fail.
 undo.

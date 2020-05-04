@@ -10,7 +10,7 @@ Cevabı evet-hayır olmayan sorular evet-hayır sorularına cevirildi bu sebeple
 
 Uzman sistemde orijinal çalışmadaki uzunluk birimlerini kullanmıştır. Bu nedenle bazı yerlerde metrik bazı yerlerde `US Customary Units` ölçü sistemleri kullanılmıştır.
 
-Sistemin tree graph'ı proje içinde png formatıyla bulunmaktadır. Daha sonradan graph güncellenilmek istenirse draw.io üzerinden editlenebilen xml dosyası için URL: 
+Sistemin tree graph proje içinde png ve xml formatıyla bulunmaktadır. 
 
 Kaynak:
     http://www.knowyourinsects.org/

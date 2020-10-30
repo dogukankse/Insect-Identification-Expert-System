@@ -1,29 +1,3 @@
-/*
-Mustafa Doğukan Köse
-2015280017
-
-Böceklerin Fiziksel Özelliklerine Göre Türünü Bulan Uzman Sistem.
-
-2011 yılında  Eastern Michigan Üniversitesi Biyomedikal Programı öğrencilerinden oluşan bir grubun hazırlamış olduğu bu çalışmayı prolog diliyle uzman sistemine çevirdim.
-
-Cevabı evet-hayır olmayan sorular evet-hayır sorularına cevirildi bu sebeple çıkmaz bir yol oluştu. Bu sonuç `Unknown` olarak tanımlandı.
-
-Uzman sistemde orijinal çalışmadaki uzunluk birimlerini kullanmıştır. Bu nedenle bazı yerlerde metrik bazı yerlerde `US Customary Units` ölçü sistemleri kullanılmıştır.
-
-Sistemin tree graph proje içinde png ve xml formatıyla bulunmaktadır. 
-
-Kaynak:
-    http://www.knowyourinsects.org/
-
-Orijinal çalışmayı hazırlayan kişiler:
-      • Charlotte Dotson
-      • Mary-Jo Germain
-      • Amanda McCreless
-      • Renee Millard
-      • Sara Mitchell
-
-*/
-
 :- dynamic yes/1, no/1.
 
 % kuralların ayrı bulunabilmesi için
